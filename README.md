@@ -86,7 +86,7 @@ For a detailed performance analysis of DenseNet121 on plant pathology classifica
 
 ### DenseNet121 Performance Analysis
 
-#### Performance Before Weighted Loss
+#### Performance without weighted Loss
 
 ##### Overview
 
@@ -121,7 +121,7 @@ The table below summarizes the precision, recall, and F1 scores for each class b
 | **Macro Avg**       | 0.81      | 0.76   | 0.77     | 99      |
 | **Weighted Avg**    | 0.90      | 0.91   | 0.90     | 99      |
 
-#### Performance with Weighted Loss
+#### Performance with weighted Loss
 
 ##### Introduction
 
