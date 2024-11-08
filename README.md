@@ -197,13 +197,13 @@ This section reviews the performance of the EfficientNetB1 model after implement
 
 The training and validation loss plot shows a substantial decrease in training loss from the initial epochs, which indicates the model is learning effectively from the training data. The validation loss initially decreases and then stabilizes, closely following the training loss, which suggests that the model is not overfitting significantly. This convergence of training and validation loss indicates a good generalization of the model under the current configuration. The convergence between the training and validation loss by the later epochs suggests that the model is well-tuned for the amount of training it received, with possibly minimal gains from additional training without further adjustments or more complex regularization techniques.
 
-![Training and Validation Loss Plot](Images/EfficientNetB1_accuracy_plot.png)
+![Training and Validation Loss Plot](Images/EfficientNetB1_loss_plot.png)
 
 ##### Validation Accuracy for Weighted EfficientNetB1
 
 The validation accuracy plot shows an upward trend, indicating a consistent improvement in model performance on the validation set as training progresses. The model reaches a peak accuracy and maintains it, which is indicative of robust learning outcomes.The stable high accuracy in later epochs highlights the model’s capacity to maintain its performance, suggesting that the learning rate and other hyperparameters are well-set for this phase of training. The slight dips might indicate minor fluctuations in learning but aren’t significant enough to suggest major issues.
 
-![Validation Accuracy Plot](Images/validation_accuracy_weighted_denseNet121.png)
+![Validation Accuracy Plot](Images/EfficientNetB1_accuracy_plot.png)
 
 
 ##### Classification Report for Weighted EfficientNetB1
