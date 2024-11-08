@@ -104,6 +104,68 @@ Classification Report
 | **Macro Avg**    | 0.81      | 0.76   | 0.77     | 99      |
 | **Weighted Avg** | 0.90      | 0.91   | 0.90     | 99      |
 
+
+DenseNet121 Model Performance with Weighted Loss
+
+Introduction
+
+In this segment, we explore the effects of implementing a weighted loss mechanism on the DenseNet121 model’s ability to classify plant diseases. Weighted loss is used to give more importance to minority classes in the training process, thus potentially improving the model’s performance in recognizing under-represented classes.
+
+Performance Metrics After Weighted Loss
+
+Post-adjustment, the overall metrics for the model show a notable improvement, especially in terms of balancing the recall and precision across classes:
+
+| Metric     | Value  |
+|------------|--------|
+| Precision  | 0.8602 |
+| Recall     | 0.8623 |
+| F1 Score   | 0.8601 |
+
+
+Classification Report
+
+The classification report after applying weighted loss provides a detailed view of how the model’s performance has improved across all classes:
+
+| Class            | Precision | Recall | F1 Score | Support |
+|------------------|-----------|--------|----------|---------|
+| Healthy          | 0.90      | 1.00   | 0.95     | 28      |
+| Multiple Diseases| 0.60      | 0.60   | 0.60     | 5       |
+| Rust             | 1.00      | 0.91   | 0.95     | 34      |
+| Scab             | 0.94      | 0.94   | 0.94     | 32      |
+| **Accuracy**     |           |        | 0.93     | 99      |
+| **Macro Avg**    | 0.86      | 0.86   | 0.86     | 99      |
+| **Weighted Avg** | 0.93      | 0.93   | 0.93     | 99      |
+
+Training and Validation Loss
+
+![Training and Validation Loss Plot](Images/training_plot_weighted_denseNet121.png)
+
+The plot displaying training and validation loss over epochs shows a promising trend. The training loss (blue line) decreases sharply and consistently from the beginning, which is indicative of the model effectively learning from the training data. The validation loss (orange line) also decreases, but at a slightly slower rate, which converges closer to the training loss as the epochs progress. This convergence suggests that the model is not just memorizing the training data but is also generalizing well to new, unseen data.
+- Key Observation: The close proximity of the training and validation loss lines towards the later epochs suggests reduced overfitting. The model appears robust, managing to learn generalizable patterns rather than fitting to noise within the training data.
+
+Validation Accuracy
+
+The validation accuracy plot shows a steady increase in accuracy up to around the 6th epoch, after which the accuracy plateaus. This trend suggests that the model reaches its optimal performance capacity at this point, with further training yielding marginal gains.
+- Key Observation: The plateau in validation accuracy could be an indicator that further model improvements might require adjustments beyond just additional training epochs, such as hyperparameter tuning, augmentation strategies, or even architectural changes.
+
+Validation Accuracy
+
+The Validation Accuracy Plot tracks the model’s accuracy on the validation set across epochs. It is a crucial metric for evaluating the effectiveness of the model under different training conditions.
+
+- Key Observation: The training loss decreases steadily, suggesting that the model is effectively learning from the training data. However, the validation loss plateaus, indicating potential overfitting or a need for further parameter tuning to improve generalization. The validation accuracy initially increases, indicating that the model’s predictions are aligning better with the actual labels. The plateau in later epochs suggests that maximum efficacy might have been reached with the given model configuration and data.
+
+
+Confusion Matrix
+
+The confusion matrix provides a visual representation of where the model is performing well and where it is making errors. The matrix for the DenseNet121 model after applying weighted loss shows:
+	•	Healthy: 26 out of 28 instances correctly predicted, indicating strong performance in identifying healthy leaves.
+	•	Multiple Diseases: Improved recognition with 3 correct predictions out of 5. However, there is still some confusion with other classes, indicating room for improvement.
+	•	Rust: Excellent performance with 31 out of 34 instances correctly predicted. The model shows high effectiveness in recognizing rust.
+	•	Scab: Similarly strong performance with 30 out of 32 instances correctly predicted.
+	•	Overall Analysis: The diagonal cells (from top left to bottom right), which represent correct classifications, contain the highest numbers, indicating that the model performs well across all classes. However, the off-diagonal cells show some misclassifications, especially between ‘Multiple Diseases’ and other classes, which could be an area to focus on in future training iterations.
+
+![Confusion Matrix](Images/Confusion_matrix_weighted_loss.png)
+
 <!-- ## Model Architectures
 
 Detailed customizations are made to the following models to suit specific project needs:
