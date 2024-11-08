@@ -231,5 +231,5 @@ The confusion matrix provides a detailed look at how the model performs across d
 - Scab: Similar to Rust, the model effectively identifies Scab with 31 out of 32 correct predictions.
 - Overall Analysis: The confusion matrix reveals high accuracy across most classes with slight confusion between Multiple Diseases and other diseases, suggesting that further model refinement or more targeted data augmentation could help improve these
 
-![Confusion Matrix](Images/EfficientNetB1_confusion_plot.png.png)
+![Confusion Matrix](Images/EfficientNetB1_confusion_plot.png)
 
