@@ -183,9 +183,9 @@ EfficientNetB1 incorporates innovations such as MBConv, a mobile inverted bottle
 
 This model excels in tasks that require detailed image recognition, making it highly suitable for applications ranging from medical imaging to environmental monitoring, where precision is crucial.
 
-![DenseNet Architecture](Images/EfficientNetB1.png)
+![EfficientNetB1 Architecture](Images/EfficientNetB1.png)
 
-For a detailed performance analysis of DenseNet121 on plant pathology classification, see the [DenseNet121 section](#EfficientNetB1).
+For a detailed performance analysis of DenseNet121 on plant pathology classification, see the [EfficientNetB1 section](#Weighted-EfficientNetB1-Model-Performance-Analysis).
 
 ## Weighted EfficientNetB1 Model Performance Analysis
 
