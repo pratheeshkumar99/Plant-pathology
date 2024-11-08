@@ -86,9 +86,9 @@ The Validation Accuracy Plot tracks the model’s accuracy on the validation set
 Confusion Matrix
 
 The Confusion Matrix offers a detailed view of the model’s performance across the classified labels, showing how many predictions were accurately classified and where misclassifications occurred.
-	•	Healthy: Most healthy leaves were correctly identified, with very few misclassifications.
-	•	Multiple Diseases: This class shows significant misclassification, suggesting difficulties the model faces in distinguishing these from other categories.
-	•	Rust and Scab: Both classes were mostly well-identified, with high accuracy, but some were confused with each other.
+- Healthy: Most healthy leaves were correctly identified, with very few misclassifications.
+- Multiple Diseases: This class shows significant misclassification, suggesting difficulties the model faces in distinguishing these from other categories.
+- Rust and Scab: Both classes were mostly well-identified, with high accuracy, but some were confused with each other.
 
 ![Confusion Matrix](Images/DenseNet_unweighted_confusion_plot.png)
 
