@@ -1,4 +1,4 @@
-# Advanced Plant Pathology Classification Using Deep Learning
+# Plant Pathology Classification Using Deep Learning
 
 ## Project Overview
 This repository contains a deep learning project aimed at classifying plant diseases from images of leaves. The project utilizes DenseNet121 and EfficientNet models, incorporating modifications and ensemble techniques to optimize performance for plant pathology diagnostics.
