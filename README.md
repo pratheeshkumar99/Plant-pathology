@@ -76,6 +76,14 @@ The project employs several models and techniques to address the challenges of p
 - Average Ensemble
 - Soft Voting
 
+### DenseNet121
+
+DenseNet121 is a convolutional neural network that is distinct for its dense connectivity pattern. Unlike traditional networks, where each layer is connected only to the next layer, DenseNet connects each layer to every other layer in a feed-forward fashion. This unique architecture helps in alleviating the vanishing-gradient problem, strengthening feature propagation, encouraging feature reuse, and substantially reducing the number of parameters. DenseNet has proven to be effective in various image recognition tasks, particularly in areas where preserving fine details is crucial, such as medical imaging and plant pathology.
+
+![DenseNet Architecture](Images/DenseNet-architecture.png)
+
+For a detailed performance analysis of DenseNet121 on plant pathology classification, see the [DenseNet121 section](#densenet121).
+
 ### DenseNet121 Performance Analysis
 
 #### Performance Before Weighted Loss
@@ -84,18 +92,12 @@ The project employs several models and techniques to address the challenges of p
 
 This section evaluates the DenseNet121 model's performance without a weighted loss function, establishing a baseline for its capabilities and identifying areas for potential improvement.
 
-##### Training and Validation Loss
+##### Training and Validation Loss and Validation Accuracy
 
-The Training and Validation Loss Plot shows how the model's performance changes over time. The training loss (blue line) indicates how well the model fits the training data, while the validation loss (orange line) assesses its generalization to unseen data.
+The Training and Validation Loss Plot shows how the model's performance changes over time. The training loss (blue line) indicates how well the model fits the training data, while the validation loss (orange line) assesses its generalization to unseen data. The Validation Accuracy Plot provides a crucial metric for assessing model effectiveness under varying training conditions.
 
 ![Training and Validation Loss Plot](Images/DenseNet_unweighted_loss_plot.png)
 - **Key Observation:** Steady decrease in training loss suggests effective learning, but the plateau in validation loss indicates possible overfitting.
-
-##### Validation Accuracy
-
-The Validation Accuracy Plot provides a crucial metric for assessing model effectiveness under varying training conditions.
-
-![Validation Accuracy Plot](Images/DenseNet_unweighted_accuracy_plot.png)
 - **Key Observation:** Increasing validation accuracy shows alignment with actual labels, though it plateaus, suggesting a limit to current model configuration benefits.
 
 ##### Confusion Matrix
