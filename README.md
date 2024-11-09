@@ -18,7 +18,7 @@ This repository contains a deep learning project aimed at classifying plant dise
     - [Soft Voting](#soft-voting)
 - [Evaluation and Results](#evaluation-and-results)
   - [Model Performance Comparison and Analysis](#model-performance-comparison-and-analysis)
-- [Visualizations](#visualizations)
+- [Grad-CAM Visualizations](#Grad-CAM-Visualizations)
 - [Usage Example](#usage-example)
 - [Contributing](#contributing)
 - [Citations](#citations)
@@ -395,9 +395,6 @@ The combined strategies of weighted loss and advanced ensemble techniques have l
 
 This analysis underscores the effectiveness of ensemble methods, particularly soft voting, in merging model strengths to boost performance, suggesting potential areas for future enhancements, such as exploring more complex ensemble techniques and targeted data augmentation for minor classes.
 
-
-
-## Visualizations
 
 ### Grad-CAM Visualizations
 
