@@ -275,3 +275,82 @@ The confusion matrix for EfficientNetB2 further illuminates its precision in cla
 
 ![Confusion Matrix](Images/EfficientB2_confusion_matrix.png)
 
+
+
+
+## Ensemble Methods
+
+### Introduction
+
+This section reviews the performance of ensemble methods that integrate the strengths of DenseNet121, EfficientNetB1, and EfficientNetB2 models. We implemented two types of ensembles: average ensemble and soft voting, aiming to enhance accuracy and robustness in classifying plant diseases from leaf images.
+
+#### Average Ensemble
+
+##### Methodology
+The average ensemble method calculates the mean output probabilities from each model, reducing variance among predictions and improving consistency across various classes.
+
+##### Performance Metrics
+- **Precision**: 0.93
+- **Recall**: 0.94
+- **F1 Score**: 0.94
+- **Accuracy**: 94%
+
+##### Detailed Insights
+This method enhances overall accuracy and class-specific metrics, particularly improving precision and recall for the 'Multiple Diseases' class, addressing previous imbalances in performance.
+
+##### Performance by Class
+| Class            | Precision | Recall | F1 Score | Support |
+|------------------|-----------|--------|----------|---------|
+| Healthy          | 0.91      | 0.93   | 0.92     | 28      |
+| Multiple Diseases| 0.68      | 0.60   | 0.64     | 5       |
+| Rust             | 0.99      | 0.97   | 0.98     | 34      |
+| Scab             | 0.95      | 0.94   | 0.95     | 32      |
+| **Accuracy**     |           |        | 0.94     | 99      |
+| **Macro Avg**    | 0.88      | 0.86   | 0.87     | 99      |
+| **Weighted Avg** | 0.93      | 0.94   | 0.94     | 99      |
+
+#### Soft Voting
+
+##### Methodology
+Soft voting considers the confidence of each model's predictions, weighting them to derive the final class decision. This approach leverages the specific strengths of each model, especially in terms of their confidence levels.
+
+##### Performance Metrics
+- **Precision**: 0.93
+- **Recall**: 0.93
+- **F1 Score**: 0.93
+- **Accuracy**: 97%
+
+##### Detailed Insights
+The soft voting ensemble markedly enhances performance metrics across all categories, achieving the highest accuracy and macro-average metrics. Notably, it shows significant improvement in class balance and robustness, especially in the 'Multiple Diseases' category.
+
+##### Performance by Class
+| Class            | Precision | Recall | F1 Score | Support |
+|------------------|-----------|--------|----------|---------|
+| Healthy          | 0.93      | 1.00   | 0.97     | 28      |
+| Multiple Diseases| 0.80      | 0.80   | 0.80     | 5       |
+| Rust             | 1.00      | 0.97   | 0.99     | 34      |
+| Scab             | 1.00      | 0.97   | 0.98     | 32      |
+| **Accuracy**     |           |        | 0.97     | 99      |
+| **Macro Avg**    | 0.93      | 0.94   | 0.93     | 99      |
+| **Weighted Avg** | 0.97      | 0.97   | 0.97     | 99      |
+
+### Visualizations and Further Analysis
+
+#### Average Ensemble
+
+##### Confusion Matrix
+- **Healthy**: Shows near-perfect classification accuracy.
+- **Multiple Diseases**: Displays noticeable improvement but still has room for further refinement.
+- **Rust and Scab**: Exhibits high accuracy with minimal confusion.
+![Confusion Matrix](Images/average_ensambling_confusion_matrix.png)
+
+#### Soft Voting
+
+##### Confusion Matrix
+- **Healthy**: Achieves almost perfect accuracy.
+- **Multiple Diseases**: Significant enhancements in identifying this challenging class.
+- **Rust and Scab**: Almost flawless classification with very high accuracy.
+![Confusion Matrix](Imagessoftvoting_ensambling_confusion_matrix.png)
+
+#### Conclusion
+Both ensemble methods demonstrate superior performance over individual model predictions, with soft voting displaying particularly strong outcomes due to its consideration of model confidence levels. These methods prove to be effective in leveraging the collective capabilities of multiple advanced architectures to improve diagnostic accuracy in plant pathology.
