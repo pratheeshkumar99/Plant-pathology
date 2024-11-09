@@ -175,6 +175,63 @@ This matrix reflects improved recognition of under-represented classes and overa
 
 
 
+### EfficientNetB1
+
+EfficientNetB1 is a convolutional neural network that forms part of the EfficientNet family, known for balancing depth, width, and resolution through compound scaling. This model optimizes performance and efficiency by using a systematic approach to scale up CNNs, making it more effective without increasing complexity significantly.
+
+EfficientNetB1 incorporates innovations such as MBConv, a mobile inverted bottleneck that utilizes depthwise separable convolutions to reduce computational demand, and squeeze-and-excitation blocks to enhance feature responses across channels. These features help it achieve higher accuracy with fewer parameters compared to other networks of similar size.
+
+This model excels in tasks that require detailed image recognition, making it highly suitable for applications ranging from medical imaging to environmental monitoring, where precision is crucial.
+
+![EfficientNetB1 Architecture](Images/EfficientNetB1.png)
+
+For a detailed performance analysis of DenseNet121 on plant pathology classification, see the [EfficientNetB1 section](#Weighted-EfficientNetB1-Model-Performance-Analysis).
+
+## Weighted EfficientNetB1 Model Performance Analysis
+
+### Introduction
+
+This section reviews the performance of the EfficientNetB1 model after implementing weighted loss to address class imbalances in our dataset. The weighted loss helps to enhance the model's sensitivity towards underrepresented classes, aiming for a more balanced and fair accuracy across all categories.
+
+##### Training and Validation Loss for Weighted EfficientNetB1
+
+The training and validation loss plot shows a substantial decrease in training loss from the initial epochs, which indicates the model is learning effectively from the training data. The validation loss initially decreases and then stabilizes, closely following the training loss, which suggests that the model is not overfitting significantly. This convergence of training and validation loss indicates a good generalization of the model under the current configuration. The convergence between the training and validation loss by the later epochs suggests that the model is well-tuned for the amount of training it received, with possibly minimal gains from additional training without further adjustments or more complex regularization techniques.
+
+![Training and Validation Loss Plot](Images/EfficientNetB1_loss_plot.png)
+
+##### Validation Accuracy for Weighted EfficientNetB1
+
+The validation accuracy plot shows an upward trend, indicating a consistent improvement in model performance on the validation set as training progresses. The model reaches a peak accuracy and maintains it, which is indicative of robust learning outcomes.The stable high accuracy in later epochs highlights the model’s capacity to maintain its performance, suggesting that the learning rate and other hyperparameters are well-set for this phase of training. The slight dips might indicate minor fluctuations in learning but aren’t significant enough to suggest major issues.
+
+![Validation Accuracy Plot](Images/EfficientNetB1_accuracy_plot.png)
+
+
+##### Classification Report for Weighted EfficientNetB1
+
+The classification report reflects significant improvements in precision, recall, and F1 scores across almost all classes:
+
+| Class            | Precision | Recall | F1 Score | Support |
+|------------------|-----------|--------|----------|---------|
+| Healthy          | 0.96      | 0.96   | 0.96     | 28      |
+| Multiple Diseases| 0.60      | 0.60   | 0.60     | 5       |
+| Rust             | 0.97      | 0.97   | 0.97     | 34      |
+| Scab             | 0.97      | 0.97   | 0.97     | 32      |
+| **Accuracy**     |           |        | 0.95     | 99      |
+| **Macro Avg**    | 0.88      | 0.88   | 0.88     | 99      |
+| **Weighted Avg** | 0.95      | 0.95   | 0.95     | 99      |
+
+The marked improvement in the Multiple Diseases class from previous metrics indicates that the weighted loss is effective. The high scores in other classes reinforce the model’s capability to accurately classify different plant conditions.
+
+##### Confusion Matrix for Weighted EfficientNetB1
+
+The confusion matrix provides a detailed look at how the model performs across different classes:
+- Healthy: Almost perfect prediction with 27 out of 28 correctly predicted.
+- Multiple Diseases: This class shows a marked improvement with accurate predictions for 3 out of 5 instances, though there’s still some confusion with other classes, particularly Rust and Scab.
+- Rust: High precision and recall with 33 out of 34 correctly predicted, showing that the model is very effective at identifying this condition.
+- Scab: Similar to Rust, the model effectively identifies Scab with 31 out of 32 correct predictions.
+- Overall Analysis: The confusion matrix reveals high accuracy across most classes with slight confusion between Multiple Diseases and other diseases, suggesting that further model refinement or more targeted data augmentation could help improve these
+
+![Confusion Matrix](Images/EfficientNetB1_confusion_plot.png)
 
 
 
@@ -217,7 +274,4 @@ The confusion matrix for EfficientNetB2 further illuminates its precision in cla
 - **Overall:** The matrix highlights the model's high accuracy and its proficiency in distinguishing between most classes, though slight enhancements could be made in distinguishing the Multiple Diseases class more distinctly.
 
 ![Confusion Matrix](Images/EfficientB2_confusion_matrix.png)
-
-
-
 
