@@ -19,7 +19,6 @@ This repository contains a deep learning project aimed at classifying plant dise
 - [Evaluation and Results](#evaluation-and-results)
   - [Model Performance Comparison and Analysis](#model-performance-comparison-and-analysis)
 - [Visualizations](#visualizations)
-  - [Batch Visualization](#batch-visualization)
 - [Usage Example](#usage-example)
 - [Contributing](#contributing)
 - [Citations](#citations)
@@ -395,3 +394,39 @@ The following analysis compares the precision, recall, F1 score, and accuracy ac
 The combined strategies of weighted loss and advanced ensemble techniques have led to substantial enhancements in model performance, especially in achieving class balance for challenging categories such as 'Multiple Diseases'. The soft voting ensemble, utilizing both DenseNet121 and EfficientNet variants, emerges as the most effective approach, achieving the highest accuracy and robustness across varied tests.
 
 This analysis underscores the effectiveness of ensemble methods, particularly soft voting, in merging model strengths to boost performance, suggesting potential areas for future enhancements, such as exploring more complex ensemble techniques and targeted data augmentation for minor classes.
+
+
+
+## Visualizations
+
+### Grad-CAM Visualizations
+
+#### Understanding Model Decisions with Grad-CAM
+
+Grad-CAM (Gradient-weighted Class Activation Mapping) provides a powerful visual tool to understand which parts of an image our models focus on when making predictions. This technique is particularly valuable in our project for assessing the interpretability and reliability of our models in diagnosing plant diseases from leaf images.
+
+#### Purpose of Grad-CAM in Our Project
+
+We apply Grad-CAM to the models involved in our study—DenseNet121, EfficientNetB1, and EfficientNetB2—to visualize the regions of interest that lead to specific class predictions. This method helps confirm whether the models are focusing on the pathological features of the leaves, such as spots, discolorations, or other disease indicators, which are crucial for accurate diagnostics.
+
+#### Application and Insights
+
+For each disease class, we generated heatmaps using Grad-CAM to show areas that significantly impact the model's decision-making process. These heatmaps are overlaid on the original leaf images, providing a clear visual representation of the model's focus areas:
+
+- **Healthy Leaves**: Observations reveal that the models generally focus on the overall structure and vein patterns of the leaves, which are indicative of healthy growth.
+- **Rust**: The models tend to concentrate on the orange-rusty spots characteristic of this disease, demonstrating their capability to recognize relevant disease features.
+- **Scab**: The focus is primarily on the rough, scabby patches, aligning with the typical symptoms of this condition.
+- **Multiple Diseases**: This category presents a challenge, and the heatmaps help verify whether the models are considering multiple affected areas comprehensively.
+
+#### Visual Examples
+
+Below are selected examples from our Grad-CAM analysis. Each row represents a different leaf condition, showing how each model processes and interprets the same image differently:
+
+![Grad-CAM Visualization](Images/grad-cam-viz_1.png)
+![Grad-CAM Visualization](Images/grad_cam_viz_2.png)
+
+These visualizations are crucial for verifying the focal points of our predictive models and ensuring that their predictions are based on relevant features of the leaf images. They also serve as a tool for further refinement of our models, indicating potential areas for model training adjustments.
+
+#### Conclusion
+
+Grad-CAM visualizations offer an insightful and straightforward method to check and improve our models' interpretability. By continually analyzing these heatmaps, we can better understand model behavior, leading to more accurate and reliable plant disease diagnosis. This approach not only enhances our model's diagnostic abilities but also builds trust in automated disease detection systems by providing transparent evidence of their decision-making process.
