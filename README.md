@@ -16,8 +16,8 @@ This repository contains a deep learning project aimed at classifying plant dise
   - [Ensemble Methods](#ensemble-methods)
     - [Average Ensemble](#average-ensemble)
     - [Soft Voting](#soft-voting)
-- [Training Procedures](#training-procedures)
 - [Evaluation and Results](#evaluation-and-results)
+  - [Model Performance Comparison and Analysis](#model-performance-comparison-and-analysis)
 - [Visualizations](#visualizations)
   - [Batch Visualization](#batch-visualization)
 - [Usage Example](#usage-example)
@@ -350,7 +350,48 @@ The soft voting ensemble markedly enhances performance metrics across all catego
 - **Healthy**: Achieves almost perfect accuracy.
 - **Multiple Diseases**: Significant enhancements in identifying this challenging class.
 - **Rust and Scab**: Almost flawless classification with very high accuracy.
-![Confusion Matrix](Imagessoftvoting_ensambling_confusion_matrix.png)
+![Confusion Matrix](Images/softvoting_ensambling_confusion_matrix.png)
 
 #### Conclusion
 Both ensemble methods demonstrate superior performance over individual model predictions, with soft voting displaying particularly strong outcomes due to its consideration of model confidence levels. These methods prove to be effective in leveraging the collective capabilities of multiple advanced architectures to improve diagnostic accuracy in plant pathology.
+
+
+## Evaluation and Results
+
+### Model Performance Comparison and Analysis
+
+This section delves into the performance metrics of individual models and ensemble methods, highlighting the gains achieved through the implementation of weighted loss and ensemble techniques.
+
+#### Overview of Model Performances
+The following analysis compares the precision, recall, F1 score, and accuracy across four configurations:
+
+- **DenseNet121 (After Implementing Weighted Loss)**
+- **EfficientNetB1 (Weighted Loss)**
+- **Averaging Ensemble (Combination of DenseNet121 and EfficientNet Variants)**
+- **Soft Voting Ensemble (Combination of DenseNet121 and EfficientNet Variants)**
+
+#### Comparative Performance Metrics
+
+| Model / Technique                       | Precision | Recall | F1 Score | Accuracy |
+|-----------------------------------------|-----------|--------|----------|----------|
+| **DenseNet121 (Weighted Loss)**         | 0.8602    | 0.8623 | 0.8631   | 93%      |
+| **EfficientNetB1 (Weighted Loss)**      | 0.8759    | 0.8759 | 0.8759   | 95%      |
+| **Averaging Ensemble**                  | 0.9000    | 0.9275 | 0.9117   | 96%      |
+| **Soft Voting Ensemble**                | 0.9333    | 0.9348 | 0.9337   | 97%      |
+
+##### Detailed Insights
+- **DenseNet121** shows significant improvement in handling 'Multiple Diseases' with weighted loss, showcasing more balanced performance across classes.
+- **EfficientNetB1** excels particularly in handling 'Rust' and 'Scab', slightly outperforming DenseNet121 in overall metrics, affirming its suitability for this dataset.
+- **Averaging Ensemble** boosts overall accuracy and class-specific metrics, notably for 'Multiple Diseases'.
+- **Soft Voting Ensemble** achieves the highest overall metrics, especially enhancing class balance and robustness, making it particularly effective for 'Multiple Diseases'.
+
+### Analysis of Techniques
+
+- **Impact of Weighted Loss**: Incorporating weighted loss has significantly enhanced class balance, especially benefiting 'Multiple Diseases', a category that initially showed lower performance metrics.
+- **Comparison of Model Efficacy**: While EfficientNetB1 generally surpasses DenseNet121, the integration of these models in ensembles demonstrates superior performance than when operating individually.
+- **Efficiency of Ensemble Methods**: The refinement from averaging to soft voting shows a clear progression in performance, with soft voting providing the most consistent and high-level results across all categories.
+
+### Conclusions
+The combined strategies of weighted loss and advanced ensemble techniques have led to substantial enhancements in model performance, especially in achieving class balance for challenging categories such as 'Multiple Diseases'. The soft voting ensemble, utilizing both DenseNet121 and EfficientNet variants, emerges as the most effective approach, achieving the highest accuracy and robustness across varied tests.
+
+This analysis underscores the effectiveness of ensemble methods, particularly soft voting, in merging model strengths to boost performance, suggesting potential areas for future enhancements, such as exploring more complex ensemble techniques and targeted data augmentation for minor classes.
