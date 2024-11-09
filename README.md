@@ -19,10 +19,7 @@ This repository contains a deep learning project aimed at classifying plant dise
 - [Evaluation and Results](#evaluation-and-results)
   - [Model Performance Comparison and Analysis](#model-performance-comparison-and-analysis)
 - [Grad-CAM Visualizations](#Grad-CAM-Visualizations)
-- [Usage Example](#usage-example)
-- [Contributing](#contributing)
-- [Citations](#citations)
-- [License](#license)
+- [Conclusion and Future Work](#conclusion-and-future-work)
 
 ## Dataset
 
@@ -427,3 +424,19 @@ These visualizations are crucial for verifying the focal points of our predictiv
 #### Conclusion
 
 Grad-CAM visualizations offer an insightful and straightforward method to check and improve our models' interpretability. By continually analyzing these heatmaps, we can better understand model behavior, leading to more accurate and reliable plant disease diagnosis. This approach not only enhances our model's diagnostic abilities but also builds trust in automated disease detection systems by providing transparent evidence of their decision-making process.
+
+### Conclusion and Future Work
+
+This project has demonstrated effective use of deep learning models for classifying plant diseases from images. By integrating advanced models like DenseNet121 and EfficientNet along with ensemble methods, we've achieved high accuracy and robust performance.
+
+#### Key Achievements:
+- **High Model Accuracy**: Our models reach up to 97% accuracy, showcasing their effectiveness.
+- **Innovative Visualization**: Grad-CAM visualizations confirm that models focus on relevant features of the leaves.
+- **Handling Class Imbalance**: Techniques like weighted loss have improved performance for underrepresented classes.
+
+#### Looking Ahead:
+- **Expand the Dataset**: Including a broader range of images to enhance model generalization.
+- **Real-Time Detection**: Developing a tool for real-time disease diagnosis in agricultural settings.
+- **Enhance Model Interpretability**: Improving the transparency of model decisions to make them more understandable.
+
+This project sets the groundwork for future innovations in plant disease diagnosis, aiming to support agricultural productivity through enhanced disease management. We welcome further contributions to refine and expand upon this work.
